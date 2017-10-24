@@ -30,7 +30,7 @@ Things you may want to cover:
 |Column|Type|Options|
 |------|----|-------|
 |name|String|null: false, unique: true,index:true|
-|e-mail|text|null: false|
+|e-mail|String|null: false|
 |password|text|null: false|
 
 ### Association
@@ -42,8 +42,8 @@ Things you may want to cover:
 
 |Column|Type|Options|
 |------|----|-------|
-|text|text|null: false|
-|image|text|null: false|
+|text|text||
+|image|text||
 |user_id|integer|null: false, foreign_key: true|
 |group_id|integer|null: false, foreign_key: true|
 
