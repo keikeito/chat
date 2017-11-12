@@ -1,0 +1,45 @@
+%div.chat
+	%div.chat-left-side
+		%div.chat-left-side-account
+			%p.name NAKAYAMA
+			= link_to "/" do
+				%i.fa.fa-cog
+			= link_to "/" do
+				%i.fa.fa-pencil-square-o
+
+		%div.chat-left-side-group
+			%p.group-name TEST GROUP
+			%p.group-name-message
+				まだメッセージはありません
+			%p.group-name sampleグループ
+			%p.group-name-message
+				まだメッセージはありません
+
+	%div.chat-main
+		%div.chat-main-group.clearfix
+			%p.chat-main-group-name sampleグループ
+			= link_to 'https://www.google.co.jp/' , class:'chat-main-group-edit' do
+				Edit
+			%p.hat-main-group-menbers Member:test1,tes2,test3
+
+		%div.chat-main-group-message
+			%li.chat-main-group-message--name test1
+			%li.chat-main-group-message--date 2017/11/31/18:00:00
+			%li.chat-main-group-message--comment Hello World!
+
+			%li.chat-main-group-message--name test2
+			%li.chat-main-group-message--date 2017/10/31/19:00:00
+			%li.chat-main-group-message--comment Hello World!
+
+		%div.chat-main-group-typemessage
+			%p.chat-main-group-typemessage--type type a message
+			%input.chat-main-group-typemessage--send{:type => "submit", :value => "Send"}
+			= link_to "/" do
+				%i.fa.fa-file-image-o
+
+
+
+
+
+
+
