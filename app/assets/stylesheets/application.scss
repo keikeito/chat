@@ -2,42 +2,43 @@
  *= require font-awesome
  */
 @import "./reset";
+@import "./variable";
 
 .chat__leftside {
 	width: 300px;
 	float: left;
 	&__account {
-		background-color: #253141;
+		background-color: $account-color;
 		padding-top: 35px;
 		height: 60px;
 
 		.name {
-			color: #FFFFFF;
+			color: $accountName-color;
 			font-size: 16px;
 			padding-left: 20px;
 			font-family: Bold;
 			float: left;
 		}
 		.fa.fa-pencil-square-o {
-			color: #FFFFFF;
+			color: $accountName-color;
 			padding-top: 5px;
 			padding-right: 20px;
 			float: right;
 
 		}
 		.fa.fa-cog {
-			color: #FFFFFF;
+			color: $accountName-color;
 			padding-top: 5px;
 			padding-right: 20px;
 			float: right;
 		}
 	}
 	&__group {
-		background-color: #2f3e51;
+		background-color: $group-color;
 		height: 726px;
 
 		.groupName  {
-			color: #FFFFFF;
+			color: $accountName-color;
 			font-size: 15px;
 			padding-top: 20px;
 			padding-left: 20px;
@@ -45,7 +46,7 @@
 
 		}
 		.groupNameMessage {
-			color: #FFFFFF;
+			color: $accountName-color;
 			font-size: 11px;
 			padding-left: 20px;
 			padding-bottom: 5px;
@@ -64,7 +65,7 @@
 	 	margin-bottom: 15px;
 
 	 	&__name  {
-	 		color: #333333;
+	 		color: $name-color;
 	 		font-size: 20px;
 	 		display: inline;
 	 		margin-top: 35px;
@@ -72,21 +73,21 @@
 	 	}
 	 	&__edit  {
 	 		background-color: white;
-	 		color: #38AEF0;
+	 		color: $edit-color;
 	 		height:  40px;
 	 		margin-right: 40px;
 	 		float: right;
 	 		padding-left: 20px;
 	 		padding-right: 20px;
 	 		border: medium solid;
-	 		border-color: #38AEF0;
+	 		border-color: $edit-color;
 	 		display: flex;
 	 		align-items: center;
 	 		text-decoration: none;
 
 	 	}
 	 	&__menbers {
-	 		color: #999999;
+	 		color: $menbers-color;
 	 		padding-top: 15px;
 	 		font-size: 12px;
 
@@ -106,14 +107,14 @@
 		list-style: none;
 
 		&__name {
-			color: #434A54;
+			color: $comment-color;
 			font-size: 16px;
 			font-family: Bold;
 			padding-right: 10px;
 			float: left;
 		}
 		&__date {
-			color: #999999;
+			color: $menbers-color;
 			font-size: 12px;
 			padding-top: 4px;
 		}
@@ -130,7 +131,7 @@
 		padding-bottom: 20px;
 		padding-left: 40px;
 		&__type  {
-			color: #434A54;
+			color: $comment-color;
 			font-size: 16px;
 			padding-left: 10px;
 			display: inline;
@@ -138,8 +139,8 @@
 			border: 0px;
 		}
 		&__send {
-			background-color: #38AEF0;
-			color: #FFFFFF;
+			background-color: $edit-color;
+			color: $accountName-color;
 			font-size: 16px;
 			padding-left: 20px;
 			padding-right: 20px;
