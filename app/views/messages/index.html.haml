@@ -8,11 +8,9 @@
         %i.fa.fa-pencil-square-o
 
     %div.chat__leftside__group
-      %p.groupName TEST GROUP
-      %p.groupNameMessage
-        まだメッセージはありません
-      %p.groupName sampleグループ
-      %p.groupNameMessage
+      - current_user.chat_groups.each do |group|
+        %p.groupName= group.group_name
+        %p.groupNameMessage
         まだメッセージはありません
 
   %div.chat__main
