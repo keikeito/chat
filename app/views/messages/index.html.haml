@@ -8,29 +8,30 @@
         %i.fa.fa-pencil-square-o
 
     %div.chat__leftside__group
-      - current_user.chat_groups.each do |group|
-        %p.groupName= group.group_name
+      - current_user.chat_groups.each do |chat_group|
+        = link_to chat_group_messages_path(chat_group.id) do
+          %p.groupName= chat_group.group_name
         %p.groupNameMessage
         まだメッセージはありません
 
   %div.chat__main
     %div.chat__main__group.clearfix
-      %p.chat__main__group__name sampleグループ
-      = link_to 'https://www.google.co.jp/' , class:'chat__main__group__edit' do
+      %p.chat__main__group__name= @group.group_name
+      = link_to edit_chat_group_path(@group.id) , class:'chat__main__group__edit' do
         Edit
-      %p.chat__main__group__menbers Member:test1,tes2,test3
+      %p.chat__main__group__menbers
+        - @group.members.each do |member|
+          = member.user.name
 
     %div.chat__main__message
-      %li.chat__main__message__name test1
-      %li.chat__main__message__date 2017/11/31/18:00:00
-      %li.chat__main__message__comment Hello World!
+      - @messages.each do |message|
+        %li.chat__main__message__name= message.user.name
+        %li.chat__main__message__date= message.created_at
+        %li.chat__main__message__comment= message.body
 
-      %li.chat__main__message__name test2
-      %li.chat__main__message__date 2017/10/31/19:00:00
-      %li.chat__main__message__comment Hello World!
 
     %div.chat__main__typemessage
-      %form{action: "/", method: "post"}
-        %input.chat__main__typemessage__type{size: "70", placeholder: "type a message"}
-        %input.chat__main__typemessage__send{type: "submit", value: "Send"}
+      = form_for [@group,@message] do |f|
+        = f.text_field :body, :placeholder =>'type a message', autofocus: true,class:'chat__main__typemessage__type',size: '70'
+        = f.submit "SEND",class:'chat__main__typemessage__send'
         %i.fa.fa-file-image-o
