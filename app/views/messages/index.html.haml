@@ -12,7 +12,7 @@
         = link_to chat_group_messages_path(chat_group.id) do
           %p.groupName= chat_group.group_name
         %p.groupNameMessage
-        まだメッセージはありません
+        = chat_group.show_last_message
 
   %div.chat__main
     %div.chat__main__group.clearfix
@@ -32,6 +32,8 @@
 
     %div.chat__main__typemessage
       = form_for [@group,@message] do |f|
-        = f.text_field :body, :placeholder =>'type a message', autofocus: true,class:'chat__main__typemessage__type',size: '70'
+        = f.text_field :body, :placeholder =>'type a message', autofocus: true,class:'chat__main__typemessage__type',size: '75'
+        = f.label :image do
+          %i.fa.fa-file-image-o
+            = f.file_field :image, class:'chat__main__typemessage__fileInput'
         = f.submit "SEND",class:'chat__main__typemessage__send'
-        %i.fa.fa-file-image-o
