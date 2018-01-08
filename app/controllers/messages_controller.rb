@@ -7,12 +7,11 @@ class MessagesController < ApplicationController
 
   def create
     @messages = Message.new(message_params)
-    binding.pry
     if @messages.save
       redirect_to root_path
       flash[:notice] = "メッセージを送信しました"
     else
-      @group = ChatGroup.find(params[:chat_group_id]);
+      @group = ChatGroup.find(params[:chat_group_id])
       @messages = Message.where(chat_group_id: params[:chat_group_id])
       @message = Message.new
       redirect_to chat_group_messages_path(params[:chat_group_id])
