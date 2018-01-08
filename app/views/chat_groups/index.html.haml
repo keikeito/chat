@@ -8,7 +8,8 @@
         %i.fa.fa-pencil-square-o
 
     %div.chat__leftside__group
-      - current_user.chat_groups.each do |group|
-        %p.groupName= group.group_name
+      - current_user.chat_groups.each do |chat_group|
+        = link_to chat_group_messages_path(chat_group.id) do
+          %p.groupName= chat_group.group_name
         %p.groupNameMessage
         まだメッセージはありません
