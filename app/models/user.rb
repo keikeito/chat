@@ -7,4 +7,7 @@ class User < ApplicationRecord
 
   has_many :chat_groups, through: :members
   has_many :members
+
+  validates :name, presence: true, length: { maximum: 6 }
+
 end
