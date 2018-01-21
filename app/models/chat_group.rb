@@ -9,7 +9,7 @@ class ChatGroup < ApplicationRecord
       if last_message.image.present?
        '画像が投稿されています'
       else
-        messages.body
+        last_message.body
       end
     else
       'まだメッセージはありません。'
